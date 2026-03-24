@@ -1,12 +1,11 @@
 {
-	"name": "@en-atul/ecom-mfe-styles",
+	"name": "@ecom-mfe/styles",
 	"version": "1.0.0",
 	"private": false,
 	"exports": {
 		"./global.css": "./src/global.css"
 	},
 	"publishConfig": {
-		"registry": "https://npm.pkg.github.com",
 		"access": "public"
 	}
 }

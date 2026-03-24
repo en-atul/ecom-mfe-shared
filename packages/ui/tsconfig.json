@@ -1,5 +1,5 @@
 {
-  "extends": "@en-atul/ecom-mfe-typescript-config/react-library.json",
+  "extends": "@ecom-mfe/typescript-config/react-library.json",
   "compilerOptions": {
     "outDir": "dist"
   },

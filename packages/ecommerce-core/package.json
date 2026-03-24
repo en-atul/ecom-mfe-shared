@@ -1,5 +1,5 @@
 {
-	"name": "@en-atul/ecom-mfe-ecommerce-core",
+	"name": "@ecom-mfe/ecommerce-core",
 	"version": "1.0.0",
 	"private": false,
 	"type": "module",
@@ -11,14 +11,13 @@
 		"zustand": "^5.0.8"
 	},
 	"devDependencies": {
-		"@en-atul/ecom-mfe-eslint-config": "workspace:*",
-		"@en-atul/ecom-mfe-typescript-config": "workspace:*",
+		"@ecom-mfe/eslint-config": "workspace:*",
+		"@ecom-mfe/typescript-config": "workspace:*",
 		"@types/node": "^22.14.0",
 		"eslint": "^9.25.0",
 		"typescript": "^5.8.3"
 	},
 	"publishConfig": {
-		"registry": "https://npm.pkg.github.com",
 		"access": "public"
 	}
 }

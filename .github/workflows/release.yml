@@ -1,0 +1,59 @@
+name: Publish npm Packages
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "packages/**"
+      - "pnpm-workspace.yaml"
+      - "package.json"
+      - ".github/workflows/release.yml"
+  workflow_dispatch:
+    inputs:
+      package:
+        description: "Package to publish (all or package folder name)"
+        required: true
+        default: "all"
+        type: choice
+        options:
+          - all
+          - ecommerce-core
+          - eslint-config
+          - rspack-config
+          - styles
+          - typescript-config
+          - ui
+          - utils
+
+permissions:
+  id-token: write
+  contents: read
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          registry-url: https://registry.npmjs.org
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile=false
+
+      - name: Publish packages
+        run: |
+          if [ "${{ github.event.inputs.package || 'all' }}" = "all" ]; then
+            pnpm -r --filter "./packages/*" exec pnpm publish --access public --no-git-checks
+          else
+            pnpm -r --filter "./packages/${{ github.event.inputs.package }}" exec pnpm publish --access public --no-git-checks
+          fi
