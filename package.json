@@ -6,7 +6,7 @@
   "scripts": {
     "build": "pnpm -r --filter ./packages/* run build",
     "check-types": "pnpm -r --filter ./packages/* run check-types",
-    "publish:packages": "pnpm -r --filter ./packages/* publish --no-git-checks"
+    "publish:packages": "pnpm -r --filter \"./packages/*\" exec pnpm publish --access public --no-git-checks"
   },
   "packageManager": "pnpm@9.0.0",
   "engines": {
