@@ -1,0 +1,15 @@
+{
+  "name": "ecom-mfe-shared",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Shared packages for microfrontend apps",
+  "scripts": {
+    "build": "pnpm -r --filter ./packages/* run build",
+    "check-types": "pnpm -r --filter ./packages/* run check-types",
+    "publish:packages": "pnpm -r --filter ./packages/* publish --no-git-checks"
+  },
+  "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=22"
+  }
+}

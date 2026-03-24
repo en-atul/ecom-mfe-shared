@@ -1,0 +1,29 @@
+{
+	"name": "@en-atul/ecom-mfe-ui",
+	"version": "1.0.0",
+	"private": false,
+	"exports": {
+		"./*": "./src/*.tsx"
+	},
+	"scripts": {
+		"check-types": "tsc --noEmit"
+	},
+	"devDependencies": {
+		"@en-atul/ecom-mfe-eslint-config": "workspace:*",
+		"@en-atul/ecom-mfe-typescript-config": "workspace:*",
+		"@types/node": "^22.14.0",
+		"@types/react": "19.1.0",
+		"@types/react-dom": "19.1.1",
+		"eslint": "^9.25.0",
+		"typescript": "5.8.3"
+	},
+	"dependencies": {
+		"classnames": "^2.5.1",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0"
+	},
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com",
+		"access": "public"
+	}
+}
